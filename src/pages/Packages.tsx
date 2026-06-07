@@ -9,14 +9,18 @@ interface PackageSectionProps {
   items: PackageItem[]
   ctaLabel: string
   imageLeft: boolean
+  imageUrl: string
+  imageAlt: string
 }
 
-function PackageSection({ name, items, ctaLabel, imageLeft }: PackageSectionProps) {
+function PackageSection({ name, items, ctaLabel, imageLeft, imageUrl, imageAlt }: PackageSectionProps) {
   const image = (
-    <div className="lg:w-[40%]">
-      <div
-        className="w-full aspect-[4/3] bg-surface-bright border border-[rgba(212,175,55,0.3)]"
-        aria-hidden="true"
+    <div className="lg:w-[40%] w-full overflow-hidden rounded">
+      <img
+        src={imageUrl}
+        alt={imageAlt}
+        className="w-full aspect-[4/3] object-cover"
+        loading="lazy"
       />
     </div>
   )
@@ -85,6 +89,8 @@ const packagesData = [
     ],
     ctaLabel: 'Enquire About Premium',
     imageLeft: true,
+    imageUrl: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A golden retriever sitting regally in a beautifully lit environment',
   },
   {
     name: 'Classic',
@@ -96,6 +102,8 @@ const packagesData = [
     ],
     ctaLabel: 'Enquire About Classic',
     imageLeft: false,
+    imageUrl: 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A well-groomed golden retriever portrait in soft natural light',
   },
   {
     name: 'Day',
@@ -107,6 +115,8 @@ const packagesData = [
     ],
     ctaLabel: 'Enquire About Day',
     imageLeft: true,
+    imageUrl: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A happy dog enjoying an outdoor activity on a sunny day',
   },
 ]
 

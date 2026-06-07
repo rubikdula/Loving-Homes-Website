@@ -32,18 +32,26 @@ const facilities = [
   {
     title: 'Grooming & Spa',
     description: 'Professional grooming and spa treatments by expert therapists.',
+    imageUrl: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'A dog receiving professional spa grooming',
   },
   {
     title: 'Rooms & Suites',
     description: 'Private rooms with underfloor heating, cooling, and television.',
+    imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'A warmly lit luxury hotel suite',
   },
   {
     title: 'Chauffeur Service',
     description: 'Complimentary collect and return for every guest.',
+    imageUrl: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'A sleek luxury chauffeur vehicle on a quiet road',
   },
   {
     title: 'Veterinary Care',
     description: 'On-call veterinary services available around the clock.',
+    imageUrl: 'https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'A veterinarian caring for a dog',
   },
 ]
 
@@ -55,14 +63,20 @@ export default function Home() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         aria-labelledby="hero-heading"
       >
-        {/* Background */}
+        {/* Background image */}
+        <img
+          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=80"
+          alt="A golden retriever in a beautifully lit editorial setting"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        {/* Dark overlay to keep text legible */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#131313] to-[#1a1500]"
+          className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.55)] via-[rgba(19,19,19,0.45)] to-[rgba(10,10,0,0.80)]"
           aria-hidden="true"
         />
         {/* Subtle gold glow */}
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(212,175,55,0.07),transparent)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(212,175,55,0.08),transparent)]"
           aria-hidden="true"
         />
 
@@ -162,10 +176,14 @@ export default function Home() {
                 key={f.title}
                 className="group"
               >
-                <div
-                  className="aspect-[4/3] bg-surface-bright border border-[rgba(212,175,55,0.3)] mb-5"
-                  aria-hidden="true"
-                />
+                <div className="aspect-[4/3] overflow-hidden mb-5">
+                  <img
+                    src={f.imageUrl}
+                    alt={f.imageAlt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
                 <p className="text-[12px] font-bold leading-[16px] tracking-[0.15em] uppercase font-sans text-primary mb-2">
                   {f.title}
                 </p>
