@@ -32,25 +32,25 @@ const facilities = [
   {
     title: 'Grooming & Spa',
     description: 'Professional grooming and spa treatments by expert therapists.',
-    imageUrl: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=600&q=75',
     imageAlt: 'A dog receiving professional spa grooming',
   },
   {
     title: 'Rooms & Suites',
     description: 'Private rooms with underfloor heating, cooling, and television.',
-    imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=75',
     imageAlt: 'A warmly lit luxury hotel suite',
   },
   {
     title: 'Chauffeur Service',
     description: 'Complimentary collect and return for every guest.',
-    imageUrl: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=75',
     imageAlt: 'A sleek luxury chauffeur vehicle on a quiet road',
   },
   {
     title: 'Veterinary Care',
     description: 'On-call veterinary services available around the clock.',
-    imageUrl: 'https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=600&q=75',
     imageAlt: 'A veterinarian caring for a dog',
   },
 ]
@@ -65,9 +65,12 @@ export default function Home() {
       >
         {/* Background image */}
         <img
-          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1280&q=75"
+          srcSet="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1280&q=75 1280w, https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=75 1920w"
+          sizes="100vw"
           alt="A golden retriever in a beautifully lit editorial setting"
           className="absolute inset-0 w-full h-full object-cover object-center"
+          fetchPriority="high"
         />
         {/* Dark overlay to keep text legible */}
         <div
